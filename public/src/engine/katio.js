@@ -13,14 +13,15 @@ class reder_HTML extends HTMLElement {
 
     connectedCallback() {
         this.part = this.getAttribute("part");
-        this.p = this.getAttribute("main") 
+        this.p = this.getAttribute("main")
+        this.l = this.getAttribute("global")
         this.canal = Date.now()
         this.cod
 
-        if(parseInt(this.p) == 1){
+        if (parseInt(this.p) == 1) {
             console.log("principal")
         }
-        
+
         en("htmlpart", { part: this.part, canal: this.canal });
 
 
@@ -29,7 +30,13 @@ class reder_HTML extends HTMLElement {
         })
         rec.on(this.canal + 5, (e) => {
             try {
-                this.cod = eval(e)
+                if (parseInt(this.l) == 1) {
+                    let s = document.createElement('script')
+                    s.textContent = e;
+                    document.body.appendChild(s);
+                } else {
+                    this.cod = eval(e)
+                }
             } catch (err) {
                 console.log("error de lectura")
             }
