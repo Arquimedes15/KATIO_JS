@@ -13,7 +13,9 @@ const io = new Server(server)
 io.on("connect", (socket) => {
     socket.on("htmlpart", (msg) => {
         let busq = reder_HTML(msg.part[0])
+        let scrip = js_bus(msg.part[0]);
         socket.emit(msg.canal, busq + "")
+        socket.emit(msg.canal+5, scrip+"")
     })
 })
 
@@ -27,11 +29,18 @@ server.listen(8888, () => {
 function reder_HTML(name) {
     try {
 
-        let html = fs.readFileSync("./public/src/conponet-part/" + name + ".html")
-        return html;
+        return fs.readFileSync("./public/src/conponet-part/" + name + ".html")
 
     } catch (error) {
         return fs.readFileSync("./public/src/conponet-part/error.html")
     }
 
+}
+
+function js_bus(name){
+    try{
+        return fs.readFileSync(`./public/src/conponet-part/${name}/${name}.js`)
+    }catch(err){
+        return 'console.log("Notiene js")'
+    }
 }
