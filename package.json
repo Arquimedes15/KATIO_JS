@@ -8,7 +8,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Arquimedes",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",

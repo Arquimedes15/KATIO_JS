@@ -13,10 +13,16 @@ class reder_HTML extends HTMLElement {
 
     connectedCallback() {
         this.part = this.getAttribute("part");
+        this.p = this.getAttribute("main") 
         this.canal = Date.now()
         this.cod
 
+        if(parseInt(this.p) == 1){
+            console.log("principal")
+        }
+        
         en("htmlpart", { part: this.part, canal: this.canal });
+
 
         rec.on(this.canal, (e) => {
             this.innerHTML = e;
@@ -26,7 +32,6 @@ class reder_HTML extends HTMLElement {
                 this.cod = eval(e)
             } catch (err) {
                 console.log("error de lectura")
-                console.log(e)
             }
         })
 

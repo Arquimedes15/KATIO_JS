@@ -15,7 +15,7 @@ io.on("connect", (socket) => {
         let busq = reder_HTML(msg.part[0])
         let scrip = js_bus(msg.part[0]);
         socket.emit(msg.canal, busq + "")
-        socket.emit(msg.canal+5, scrip+"")
+        socket.emit(msg.canal + 5, scrip + "")
     })
 })
 
@@ -37,10 +37,17 @@ function reder_HTML(name) {
 
 }
 
-function js_bus(name){
-    try{
-        return fs.readFileSync(`./public/src/conponet-part/${name}/${name}.js`)
-    }catch(err){
+function js_bus(name) {
+    try {
+        let dir = `./public/src/conponet-part/${name}/`
+        let dirfile = fs.readdirSync(dir)
+        let scrip = ""
+
+        for(let x = 0; x < dirfile.length; x++){
+            scrip += fs.readFileSync(`${dir}/${dirfile[x]}`) + "\n"
+        }
+        return scrip
+    } catch (err) {
         return 'console.log("Notiene js")'
     }
 }
