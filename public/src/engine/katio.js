@@ -3,6 +3,9 @@ function en(canal, msg) {
     rec.emit(canal, msg)
 }
 
+function NumRa(min, max) {
+    return Math.random() * (max - min) + min;
+}
 
 class reder_HTML extends HTMLElement {
     constructor() {
@@ -15,7 +18,8 @@ class reder_HTML extends HTMLElement {
         this.part = this.getAttribute("part");
         this.p = this.getAttribute("main")
         this.l = this.getAttribute("global")
-        this.canal = Date.now()
+        this.ra = NumRa(1, 10000);//un cero mas para solucionar la vida
+        this.canal = Date.now() + this.ra;
         this.cod
 
         if (parseInt(this.p) == 1) {
@@ -23,7 +27,6 @@ class reder_HTML extends HTMLElement {
         }
 
         en("htmlpart", { part: this.part, canal: this.canal });
-
         rec.on(this.canal/2, (e)=>{
             let st = `<style>${e}</style>`
             this.innerHTML += st;

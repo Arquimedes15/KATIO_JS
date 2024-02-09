@@ -1,0 +1,20 @@
+main{
+    background-color: yellow;
+    display: flex;
+
+    #nose-nose{
+        width: 60%;
+        overflow-y: auto;
+    }
+
+    #news{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 40;
+    }
+}
+footer{
+    background: green;
+    height: 20vh;
+}

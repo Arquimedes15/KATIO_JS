@@ -22,6 +22,11 @@ io.on("connect", (socket) => {
         console.log(e);
         socket.emit("test01", "Todo OK");
     })
+
+    socket.on("reload", (e)=>{
+        web_componet = []
+        load_component()
+    })
 })
 
 
