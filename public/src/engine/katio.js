@@ -8,7 +8,10 @@ function NumRa(min, max) {
 }
 
 import Setting from "../../config.js";
+import Katio from "../../lib/katio_lib.js";
 
+
+const k = new Katio()
 const setting = new Setting();
 
 document.querySelector("title").textContent = setting.name
