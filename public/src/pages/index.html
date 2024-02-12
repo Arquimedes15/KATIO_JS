@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ñe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10vh;
+            background: blue;
+
+            & div {
+                position: absolute;
+                height: 10vh;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & a {
+                    font-size: 4vh;
+                    background-color: red;
+                    margin: 2%;
+                    padding: .1% .5%;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                & img {
+                    position: fixed;
+                    top: 0;
+                    border-radius: 50%;
+                    left: calc(50% - 5vh);
+                    height: 10vh;
+                    padding: 0.5%;
+                    object-fit: cover;
+                    background-color: white;
+                }
+
+                & span {
+                    color: none;
+                    font-size: 4vh;
+                    margin: 0 2vh;
+                }
+            }
+
+        }
+
+        #reload {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+
+        #slider_1 {
+            height: 50vh;
+            border: 2px solid black;
+            margin: 10vh 0 0 0;
+            background-color: darkmagenta;
+        }
+
+
+        main {
+            background-color: yellow;
+            display: flex;
+
+            #nose-nose {
+                width: 60%;
+                overflow-y: auto;
+            }
+
+            #news {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                width: 40;
+            }
+        }
+
+        
+
+        footer {
+            background: green;
+            height: 20vh;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="http://localhost:8888/src/engine/socket.io.js"></script>
+    <script src="http://localhost:8888/src/engine/katio.js" type="module"></script>
+    <header>
+        <div><a>button</a><a>button</a><a>button</a>
+            <img src="https://2.bp.blogspot.com/-bs6Asw8Mnfg/WCNHn7BRQVI/AAAAAAAA2U8/VUlQ5q_BJOguzFUAf4YZAIfsdL9ojWgqACLcB/s1600/iei-309-piloto-insignia.jpg"
+                alt=""><span>hola</span><a>button</a><a>button</a><a>button</a>
+        </div>
+    </header>
+
+    <div id="slider_1"></div>
+
+    <main>
+        <katio-draw id="nose-nose" part="content" main="1"></katio-draw>
+        <div id="news">
+            <div class="new-p">
+                <span>noticiass</span>
+                <p>No se que colcal aqui um... tarea</p>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+
+    <button id="reload">Reload</button>
+</body>
+
+</html>
+<script>
+    document.querySelector("#reload").addEventListener("click", ()=>{
+    en("reload", "nose")
+    location.reload()
+})
+</script>

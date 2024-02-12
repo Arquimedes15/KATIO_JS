@@ -7,6 +7,12 @@ function NumRa(min, max) {
     return Math.random() * (max - min) + min;
 }
 
+import Setting from "../../config.js";
+
+const setting = new Setting();
+
+document.querySelector("title").textContent = setting.name
+
 class reder_HTML extends HTMLElement {
     constructor() {
         super();
@@ -27,7 +33,7 @@ class reder_HTML extends HTMLElement {
         }
 
         en("htmlpart", { part: this.part, canal: this.canal });
-        rec.on(this.canal/2, (e)=>{
+        rec.on(this.canal / 2, (e) => {
             let st = `<style>${e}</style>`
             this.innerHTML += st;
 

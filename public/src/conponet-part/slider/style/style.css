@@ -1,6 +1,46 @@
-#slider_1{
+#slider_1 {
     height: 50vh;
     border: 2px solid black;
     margin: 10vh 0 0 0;
     background-color: darkmagenta;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+}
+
+.slider{
+    
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.indicator-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicator {
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #555;
 }

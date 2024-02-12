@@ -1,20 +1,34 @@
-main{
+main {
     background-color: yellow;
     display: flex;
 
-    #nose-nose{
+    #nose-nose {
         width: 60%;
         overflow-y: auto;
+        padding: 5%;
+        height: 80vh;
     }
 
-    #news{
+
+
+    #nose-nose::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    #nose-nose::-webkit-scrollbar-thumb {
+        background-color: #006aff;
+        border-radius: 5px;
+    }
+
+    #news {
         display: flex;
         align-items: center;
         flex-direction: column;
         width: 40;
     }
 }
-footer{
+
+footer {
     background: green;
     height: 20vh;
 }
