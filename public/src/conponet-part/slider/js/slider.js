@@ -1,8 +1,8 @@
 let slider = document.querySelector(".slider")
 let but = document.querySelector(".indicator-buttons");
 
-slider.innerHTML += `<img id="cal-slider-ka" src="http://localhost:8888/src/img/01.png">`
-slider.innerHTML += `<img id="cal-slider-ka" src="http://localhost:8888/src/img/02.png">`
+slider.innerHTML += `<img alt="nose" id="cal-slider-ka" src="./src/img/01.png">`
+slider.innerHTML += `<img alt="nose" id="cal-slider-ka" src="./src/img/02.png">`
 
 but.innerHTML += `<button class="indicator active">1</button>`
 but.innerHTML += `<button class="indicator">2</button>`
