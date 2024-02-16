@@ -133,4 +133,37 @@ img {
             }
         }
     }
+
+    .siti-int {
+        background-color: #fff;
+        padding: 1.5%;
+
+        & h5 {
+            font-size: 3vh;
+            color: blue;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            gap: 1vh;
+            padding: 1%;
+
+            & a{
+                height: 5vh;
+
+                & img{
+                    object-fit: cover;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+#map{
+    width: 100%;
+    height: 30vh;
 }
