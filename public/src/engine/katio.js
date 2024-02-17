@@ -36,13 +36,14 @@ class reder_HTML extends HTMLElement {
         }
 
         en("htmlpart", { part: this.part, canal: this.canal });
-        rec.on(this.canal / 2, (e) => {
+        /*rec.on(this.canal / 2, (e) => {
             this.innerHTML = ""
             let st = `<style>${e}</style>`
             this.innerHTML += st;
 
-        })
+        })*/
         rec.on(this.canal, (e) => {
+            this.innerHTML = ""
             this.innerHTML += e;
         })
         rec.on(this.canal + 5, (e) => {

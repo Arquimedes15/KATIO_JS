@@ -60,13 +60,29 @@ header {
             gap: 3vh;
 
             & li{
+                position: relative;
                 font-size: 2vh;
                 color: #fff;
                 cursor: pointer;
+                text-decoration: .2vh underline #fff;
+                transition: all ease .7s;
+
+                & ul{
+                    transition: all ease .7s;
+                    position: absolute;
+                    display: none;
+                    gap: 0;
+                    flex-direction: column;
+                    background-color: blue;
+                }
             }
 
             & li:hover{
                 color: goldenrod;
+                text-decoration: .2vh underline goldenrod;
+                & ul{
+                    display: flex;
+                }
             }
         }
     }

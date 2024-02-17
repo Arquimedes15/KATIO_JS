@@ -14,7 +14,7 @@ io.on("connect", (socket) => {
     socket.on("htmlpart", (msg) => {
         let busq = web_componet.findIndex(i => i.name == msg.part[0]);
         //let scrip = js_bus(msg.part[0]);
-        socket.emit(msg.canal / 2, web_componet[busq].css);
+        //socket.emit(msg.canal / 2, web_componet[busq].css);
         socket.emit(msg.canal, web_componet[busq].html);
         socket.emit(msg.canal + 5, web_componet[busq].js);
     })
@@ -59,11 +59,10 @@ server.listen(8888, () => {
 })
 
 class Componet_web {
-    constructor(html, js, css, name) {
+    constructor(html, js, name) {
         this.name = name;
         this.html = html;
         this.js = js;
-        this.css = css;
     }
 }
 
@@ -102,7 +101,7 @@ function load_component() {
         let js = js_bus(`${dir}${files[x]}/js/`);
         let style = js_bus(`${dir}${files[x]}/style/`)
 
-        web_componet.push(new Componet_web(html + "", js, style, files[x]))
+        web_componet.push(new Componet_web("<style>" +style + "</style>" + html + "", js, files[x]))
     }
 
     /*dir = "./public/src/pages/";

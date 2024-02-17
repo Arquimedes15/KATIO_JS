@@ -22,10 +22,19 @@
     }
 }
 
-.buttons {
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    background-color: #cccccc5b;
+    border: none;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.next{
+    right: 0;
 }
 
 .indicator-buttons {
