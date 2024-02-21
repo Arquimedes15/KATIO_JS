@@ -3,15 +3,15 @@ let but = document.querySelector(".indicator-buttons");
 
 //create IMG
 
-let imgJson = ["./src/img/01.png", "./src/img/02.png"]
+let imgJson = ["./src/img/slider/slider pagina web.jpg", "./src/img/slider/slider pagina web.jpg"]
 
 function loadImage() {
     for (let x = 0; x < imgJson.length; x++) {
         slider.innerHTML += `<img alt="nose" id="cal-slider-ka" src="${imgJson[x]}">`
         if (x == 0) {
-            but.innerHTML += `<button class="indicator active">${x + 1}</button>`
+            but.innerHTML += `<button class="indicator active"></button>`
         } else {
-            but.innerHTML += `<button class="indicator">${x + 1}</button>`
+            but.innerHTML += `<button class="indicator"></button>`
         }
     }
 }
@@ -55,3 +55,9 @@ prev.addEventListener("click", () => {
 function botonSelect(){
     
 }
+
+
+document.querySelector("#reload").addEventListener("click", ()=>{
+    en("reload", "nose")
+    location.reload()
+})

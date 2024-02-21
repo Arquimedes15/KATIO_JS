@@ -7,14 +7,14 @@ function NumRa(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-import Setting from "../../config.js";
-import Katio from "../../lib/katio_lib.js";
+//import Setting from "../../config.js";
+//import Katio from "../../lib/katio_lib.js";
 
 
-const k = new Katio()
-const setting = new Setting();
+//const k = new Katio()
+//const setting = new Setting();
 
-document.querySelector("title").textContent = setting.name
+//document.querySelector("title").textContent = setting.name
 
 class reder_HTML extends HTMLElement {
     constructor() {
@@ -31,10 +31,6 @@ class reder_HTML extends HTMLElement {
         this.canal = Date.now() + this.ra;
         this.cod
 
-        if (parseInt(this.p) == 1) {
-            console.log("principal")
-        }
-
         en("htmlpart", { part: this.part, canal: this.canal });
         /*rec.on(this.canal / 2, (e) => {
             this.innerHTML = ""
@@ -45,6 +41,9 @@ class reder_HTML extends HTMLElement {
         rec.on(this.canal, (e) => {
             this.innerHTML = ""
             this.innerHTML += e;
+            if (parseInt(this.p) == 1) {
+                document.querySelector("#reload-prev").style.display = "none"
+            }
         })
         rec.on(this.canal + 5, (e) => {
             try {
@@ -64,3 +63,4 @@ class reder_HTML extends HTMLElement {
 }
 
 window.customElements.define("katio-draw", reder_HTML)
+document.startViewTransition(() => updateTheDOMSomehow());

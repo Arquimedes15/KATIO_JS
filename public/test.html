@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jP</title>
+</head>
+
+<body>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+
+            background-color: #fff;
+            height: 20vh;
+            width: 100%;
+
+            .telf {
+                display: flex;
+                background-color: blue;
+                color: #fff;
+                padding: 0.5%;
+                justify-content: end;
+                align-items: center;
+                font-size: 1.7vh;
+            }
+
+            hr {
+                margin: .5vh 0;
+                background-color: aqua;
+                border: none;
+                width: 100%;
+                height: .2vh;
+            }
+
+            .name-logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 7vh;
+
+                text-align: center;
+
+                & img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                & span {
+                    font-size: 5vh;
+                    color: rgb(0, 0, 255);
+                }
+            }
+
+            .menu-li {
+                height: 5vh;
+                width: 100%;
+                background-color: blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & ul {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    list-style: none;
+                    gap: 6vh;
+
+                    & li {
+                        position: relative;
+                        font-size: 2vh;
+                        color: #fff;
+                        cursor: pointer;
+                        text-decoration: .2vh underline #fff;
+                        transition: all ease .7s;
+
+                        & ul {
+                            transition: all ease .7s;
+                            position: absolute;
+                            display: none;
+                            gap: 0;
+                            flex-direction: column;
+                            background-color: blue;
+                        }
+                    }
+
+                    & li:hover {
+                        color: goldenrod;
+                        text-decoration: .2vh underline goldenrod;
+
+                        & ul {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+    <header>
+        <div class="telf">telefono de contacto: 931106193 / 94062491</div>
+        <hr>
+        <div class="name-logo">
+            <span>Institucion Educativa Inicial</span> <img alt="Logo de jardin Piloto" src="./src/img/l-jp.jpg"><span>
+                267
+                Jardin Piloto</span>
+        </div>
+        <div class="menu-li">
+            <ul>
+                <li>Inicio</li>
+                <li>Nosotros<ul>
+                        <li>Line 1</li>
+                        <li>Line 2</li>
+                        <li>Line 3</li>
+                        <li>Line 4</li>
+                    </ul>
+                </li>
+                <li>Area Academica</li>
+                <li>Noticias</li>
+                <li>Sitio de Iteres<ul>
+                        <li>Line 14524</li>
+                        <li>Line 2</li>
+                        <li>Line 3</li>
+                        <li>Line 4</li>
+                    </ul>
+                </li>
+                <li>Tramite Documentario</li>
+            </ul>
+        </div>
+    </header>
+    </katio-draw>
+    <katio-draw part="slider" main="2">
+        <style>
+            #slider_1 {
+                height: 35vh;
+                border: 2px solid black;
+                margin: 20vh 0 0 0;
+                background-color: darkmagenta;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .slider {
+                display: flex;
+            }
+
+            .slider {
+
+                height: 100%;
+                width: 100%;
+                transition: transform 0.5s ease;
+
+                #cal-slider-ka {}
+            }
+
+            .prev,
+            .next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #cccccc5b;
+                border: none;
+                height: 10vh;
+                width: 10vh;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .next {
+                right: 0;
+            }
+
+            .indicator-buttons {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .indicator {
+                background-color: #ffee00;
+                border: none;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                margin: 0 5px;
+                cursor: pointer;
+            }
+
+            .indicator.active {
+                background-color: #ff8800;
+            }
+        </style>
+        <div id="slider_1">
+            <div class="slider" style="width: 200%;"><img alt="nose" id="cal-slider-ka"
+                    src="./src/img/slider/slider pagina web.jpg"><img alt="nose" id="cal-slider-ka"
+                    src="./src/img/slider/slider pagina web.jpg"></div>
+            <div class="buttons">
+                <button class="prev">Anterior</button>
+                <button class="next">Siguiente</button>
+            </div>
+            <div class="indicator-buttons">
+                <!-- <button class="indicator active">1</button>-->
+                <button class="indicator active"></button><button class="indicator"></button>
+            </div>
+        </div>
+        <style>
+            .bienvenido-init {
+
+                & h2 {
+                    font-size: 4vh;
+                    text-align: center;
+                    padding: 1%;
+                }
+
+                & p {
+                    padding: 0 5%;
+                }
+            }
+
+            img {
+                pointer-events: none;
+            }
+
+            .main {
+                background: url("./src/img/fondo/fondo pagina web.jpg");
+                background-size: contain;
+                width: 100%;
+
+                .main-main {
+                    display: flex;
+                    padding: 2% 1%;
+                    gap: 2%;
+                    justify-content: center;
+                    align-items: center;
+
+                    .content-news,
+                    .des-direct {
+                        height: 60vh;
+                        border-radius: 15px;
+                        background-color: #fff;
+                    }
+
+                    .content-news {
+                        width: 55%;
+                        display: flex;
+                        flex-direction: column;
+                        overflow-y: auto;
+
+                        .news-cont {
+                            padding: 2% 5%;
+
+                            & h4 {
+                                font-size: 3vh;
+                                color: blue;
+                                text-decoration: underline yellow .5vh;
+                                text-align: center;
+                            }
+
+                            & p {
+                                text-align: justify;
+                            }
+                        }
+                    }
+
+                    .content-news::-webkit-scrollbar {
+                        background-color: rgb(149, 129, 116);
+                        border-radius: 0 15px 15px 0;
+                    }
+
+                    .content-news::-webkit-scrollbar-thumb {
+                        width: 5px;
+                        background-color: #fff;
+                        border-radius: 0 15px 15px 0;
+                        padding: 1%;
+
+                    }
+
+                    .des-direct {
+                        width: 40%;
+                        padding: 2%;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        & img {
+                            height: 40vh;
+                            width: 100%;
+                            overflow: hidden;
+                            object-fit: cover;
+                        }
+
+                        & h4 {
+                            font-size: 3vh;
+                            color: blue;
+                            text-decoration: underline yellow .5vh;
+                        }
+
+                        & p {
+                            text-align: justify;
+                        }
+                    }
+                }
+
+                .main-main-main {
+                    padding: 2% 1%;
+                    display: flex;
+                    gap: 2%;
+                    justify-content: center;
+
+                    .cards {
+                        height: 40vh;
+                        width: 25%;
+                        background-color: #fff;
+                        border-radius: 15px;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        padding: 2%;
+                        justify-content: space-between;
+
+                        & img {
+                            height: 10vh;
+                            object-fit: cover;
+                            overflow: hidden;
+                            border-radius: 50%;
+
+                        }
+
+                        & h5 {
+                            font-size: 2vh;
+                            color: blue;
+                        }
+
+                        & hr {
+                            width: 100%;
+                            height: .5vh;
+                            border: none;
+                            background-color: gray;
+                        }
+                    }
+                }
+
+                .siti-int {
+                    background-color: #fff;
+                    padding: 1.5%;
+
+                    & h5 {
+                        font-size: 3vh;
+                        color: blue;
+                        text-align: center;
+                    }
+
+                    .content {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1vh;
+                        padding: 1%;
+
+                        & a {
+                            height: 5vh;
+
+                            & img {
+                                object-fit: cover;
+                                height: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #map {
+                width: 100%;
+                height: 30vh;
+            }
+        </style>
+        <style>
+            #reload {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+            }
+        </style>
+        <main>
+            <div class="bienvenido-init">
+                <h2>Bienvenido a la Institucion Educativa Inicial "267 Jardin Piloto"</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis beatae iste repudiandae ex ab nihil
+                    at!
+                    Deserunt commodi impedit architecto voluptatum voluptatibus unde enim. Cupiditate dignissimos nemo
+                    eum
+                    cumque facilis.</p>
+            </div>
+
+            <div class="main">
+                <div class="main-main">
+                    <div class="content-news">
+                        <!--Inicio-->
+                        <div class="news-cont">
+                            <h4>Comunicado N°1</h4>
+                            <p>
+                                Hola como estan<br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                                libero
+                                doloremque aspernatur eligendi vero sit aliquid ipsa? Fugiat, quae quam molestiae
+                                dolorum
+                                accusamus impedit voluptas, asperiores, quasi rem iusto itaque?
+                            </p>
+                        </div>
+                        <div class="news-cont">
+                            <h4>Comunicado N°2</h4>
+                            <p>
+                                Hola como estan<br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                                libero
+                                doloremque aspernatur eligendi vero sit aliquid ipsa? Fugiat, quae quam molestiae
+                                dolorum
+                                accusamus impedit voluptas, asperiores, quasi rem iusto itaque?
+                            </p>
+                        </div>
+                        <div class="news-cont">
+                            <h4>Comunicado N°3</h4>
+                            <p>
+                                Hola como estan<br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                                libero
+                                doloremque aspernatur eligendi vero sit aliquid ipsa? Fugiat, quae quam molestiae
+                                dolorum
+                                accusamus impedit voluptas, asperiores, quasi rem iusto itaque?
+                            </p>
+                        </div>
+                        <div class="news-cont">
+                            <h4>Comunicado N°4</h4>
+                            <p>
+                                Hola como estan<br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                                libero
+                                doloremque aspernatur eligendi vero sit aliquid ipsa? Fugiat, quae quam molestiae
+                                dolorum
+                                accusamus impedit voluptas, asperiores, quasi rem iusto itaque?
+                            </p>
+                        </div><!--Fin-->
+                    </div>
+                    <div class="des-direct">
+                        <img src="./src/img/01.png" alt="">
+                        <h4>Name name name</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, fugiat voluptas pariatur
+                            voluptatum dignissimos ratione dolorem cumque fuga necessitatibus minima eius distinctio
+                            culpa,
+                            quisquam perspiciatis est aperiam. Placeat, odio quia!</p>
+                    </div>
+                </div>
+                <div class="main-main-main">
+                    <div class="cards">
+                        <img src="./src/img/logo-k.png" alt="">
+                        <h5>DOCUMENTOS</h5>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                    </div>
+                    <div class="cards">
+                        <img src="./src/img/icon-a.png" alt="">
+                        <h5>PROGRAMAS</h5>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                    </div>
+                    <div class="cards">
+                        <img src="./src/img/l-jp.jpg" alt="">
+                        <h5>PROYECTOS</h5>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                        <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="siti-int">
+                    <h5>Sitio de Intereces</h5>
+                    <div class="content">
+                        <a href=""><img src="./src/img/icon-a.png" alt=""></a>
+                        <a href=""><img src="./src/img/icon-a.png" alt=""></a>
+                        <a href=""><img src="./src/img/icon-a.png" alt=""></a>
+                        <a href=""><img src="./src/img/icon-a.png" alt=""></a>
+                        <a href=""><img src="./src/img/icon-a.png" alt=""></a>
+                        <a href=""><img src="./src/img/icon-a.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <iframe title="nose" id="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1376.7029896730905!2d-69.19377890982108!3d-12.58857311063263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x917b49f14959a227%3A0xfec19bf1e8242d24!2sSoporte%20Maldonado!5e0!3m2!1ses-419!2spe!4v1708067627077!5m2!1ses-419!2spe"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </main>
+
+
+        <button id="reload">Reload</button>
+        <style>
+            .footer {
+                display: flex;
+                justify-content: space-around;
+                padding: 2%;
+                background-color: navy;
+
+                .content-footer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    & h5 {
+                        font-size: 3vh;
+                        color: #fff;
+                    }
+
+                    & ul {
+                        list-style: none;
+
+                        & li,
+                        a,
+                        p {
+                            color: #ffffff82;
+                            font-size: 2vh;
+                            text-decoration: none;
+                        }
+                    }
+
+                    & p {
+                        color: #ffffff82;
+                        font-size: 2vh;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 2%;
+                background-color: grey;
+
+                & p {
+                    text-align: center;
+                    font-size: 2vh;
+                    color: #ffffff82;
+                }
+            }
+        </style>
+        <div class="footer">
+            <div class="content-footer">
+                <h5>ENLACES DE INTERES</h5>
+                <ul>
+                    <li><a href="">Texto de rellerno</a></li>
+                    <li><a href="">Texto de rellerno</a></li>
+                    <li><a href="">Texto de rellerno</a></li>
+                </ul>
+            </div>
+            <div class="content-footer">
+                <h5>CONTACTANOS</h5>
+                <ul>
+                    <li>Texto de rellerno</li>
+                    <li>Texto de rellerno</li>
+                    <li>Texto de relleno</li>
+                </ul>
+            </div>
+            <div class="content-footer">
+                <h5>UBIQUENOS</h5>
+                <p>Lo mismo que lo anteriores creo no lo se </p>
+            </div>
+
+</html>

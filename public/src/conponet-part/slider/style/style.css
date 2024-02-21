@@ -1,7 +1,7 @@
 #slider_1 {
-    height: 50vh;
+    height: 35vh;
     border: 2px solid black;
-    margin: 20vh 0 0 0;
+    margin: 17vh 0 0 0;
     background-color: darkmagenta;
     position: relative;
     overflow: hidden;
@@ -11,18 +11,19 @@
     display: flex;
 }
 
-.slider{
-
+.slider {
     width: 100%;
-    object-fit: cover;
     transition: transform 0.5s ease;
+    height: 100%;
 
     & img{
+        height: 100%;
         width: 100%;
     }
 }
 
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -33,7 +34,8 @@
     border-radius: 50%;
     cursor: pointer;
 }
-.next{
+
+.next {
     right: 0;
 }
 
@@ -45,15 +47,15 @@
 }
 
 .indicator {
-    background-color: #ccc;
+    background-color: #ffee00;
     border: none;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     margin: 0 5px;
     cursor: pointer;
 }
 
 .indicator.active {
-    background-color: #555;
+    background-color: #ff8800;
 }

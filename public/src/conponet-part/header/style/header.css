@@ -5,7 +5,7 @@ header {
     z-index: 999;
 
     background-color: #fff;
-    height: 20vh;
+    height: 17vh;
     width: 100%;
 
     .telf {
@@ -23,28 +23,40 @@ header {
         background-color: aqua;
         border: none;
         width: 100%;
-        height: .8vh;
+        height: .2vh;
     }
 
     .name-logo {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 10vh;
+        height: 7vh;
 
         text-align: center;
 
         & img {
             height: 100%;
             object-fit: cover;
+            margin: 0 1%;
         }
 
-        & span{
+        & span {
             font-size: 5vh;
-            color: greenyellow;
+            color: #fff;
+            text-shadow:
+                0 0 5px rgba(0, 178, 255, 1),
+                0 0 10px rgba(0, 178, 255, 1),
+                0 0 20px rgba(0, 178, 255, 1),
+                0 0 40px rgba(38, 104, 127, 1),
+                0 0 80px rgba(38, 104, 127, 1),
+                0 0 90px rgba(38, 104, 127, 1),
+                0 0 100px rgba(38, 104, 127, 1),
+                0 0 140px rgba(38, 104, 127, 1),
+                0 0 180px rgba(38, 104, 127, 1);
         }
     }
-    .menu-li{
+
+    .menu-li {
         height: 5vh;
         width: 100%;
         background-color: blue;
@@ -52,38 +64,69 @@ header {
         justify-content: center;
         align-items: center;
 
-        & ul{
+        & ul {
             display: flex;
             justify-content: center;
             align-items: center;
             list-style: none;
-            gap: 3vh;
+            gap: 6vh;
 
-            & li{
-                position: relative;
+            & li, a {
                 font-size: 2vh;
                 color: #fff;
                 cursor: pointer;
                 text-decoration: .2vh underline #fff;
                 transition: all ease .7s;
 
-                & ul{
+                & ul {
                     transition: all ease .7s;
                     position: absolute;
                     display: none;
                     gap: 0;
                     flex-direction: column;
+                    align-items: start;
                     background-color: blue;
                 }
             }
 
-            & li:hover{
+            & li:hover {
                 color: goldenrod;
                 text-decoration: .2vh underline goldenrod;
-                & ul{
+
+                & ul {
                     display: flex;
                 }
             }
         }
     }
 }
+
+@keyframes show {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+/*
+img,
+h3,
+p,
+h4,
+button,
+li,
+a,
+iframe,
+div {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 0% cover 10%;
+    animation-fill-mode: both;
+}
+*/

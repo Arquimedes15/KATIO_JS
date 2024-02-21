@@ -4,23 +4,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>267 Jardin Piloto"</title>
+    <title>267 Jardin Piloto</title>
+    <link rel="icon" type="image/png" href="./src/img/l-jp.png">
+    <link rel="stylesheet" href="./src/conponet-part/inicio/style/inicio.css">
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation-duration: 5s;
+        }
+
+        ::view-transition-old(root){
+            animation-name: Inpage;
+        }
+        ::view-transition-new(root){
+            animation-name: outpage;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes Inpage {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+
+        @keyframes outpage {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+        #reload-prev {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            z-index: 9999;
+
+            & div {
+                border: 8px solid #fff;
+                border-top: 8px solid blue;
+                border-radius: 50%;
+                width: 250px;
+                height: 250px;
+                animation: spin 2s linear infinite;
+            }
+
+            & img{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                width: 150px;
+                height: 150px;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
+        button {
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <script src="./src/engine/socket.io.js"></script>
+    <div id="reload-prev">
+        <div></div>
+        <img loading="lazy" src="./src/img/l-jp.png" alt="">
+    </div>
+    <script src="./src/engine/socket.io.min.js"></script>
     <script src="./src/engine/katio.js" type="module"></script>
-    <katio-draw part="header" main="2"></katio-draw>
+    <katio-draw part="header" main="1"></katio-draw>
     <katio-draw part="slider" main="2"></katio-draw>
-    <katio-draw part="inicio" main="1"></katio-draw>
+
+
+    <style>
+        #reload {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+    <main>
+        <div class="bienvenido-init">
+            <h2>Bienvenido a la Institucion Educativa Inicial "267 Jardin Piloto"</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis beatae iste repudiandae ex ab nihil at!
+                Deserunt commodi impedit architecto voluptatum voluptatibus unde enim. Cupiditate dignissimos nemo eum
+                cumque facilis.</p>
+        </div>
+
+        <div class="main">
+            <div class="main-main">
+                <div class="content-news">
+                    <!--Inicio-->
+                    <div class="news-cont">
+                        <h4>Comunicado N°1</h4>
+                        <p>
+                            Hola como estan<br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                            libero
+                            doloremque aspernatur eligendi vero sit aliquid ipsa? Fugiat, quae quam molestiae dolorum
+                            accusamus impedit voluptas, asperiores, quasi rem iusto itaque?
+                        </p>
+                    </div>
+                    <div class="news-cont">
+                        <h4>Comunicado N°2</h4>
+                        <p>
+                            Hola como estan<br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                            libero
+                            doloremque aspernatur eligendi vero sit aliquid ipsa? Fugiat, quae quam molestiae dolorum
+                            accusamus impedit voluptas, asperiores, quasi rem iusto itaque?
+                        </p>
+                    </div>
+                    <div class="news-cont">
+                        <h4>Comunicado N°3</h4>
+                        <p>
+                            Hola como estan<br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                            libero
+                            doloremque aspernatur eligendi vero sit aliquid ipsa? Fugiat, quae quam molestiae dolorum
+                            accusamus impedit voluptas, asperiores, quasi rem iusto itaque?
+                        </p>
+                    </div>
+                    <div class="news-cont">
+                        <h4>Comunicado N°4</h4>
+                        <p>
+                            Hola como estan<br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                            libero
+                            doloremque aspernatur eligendi vero sit aliquid ipsa? Fugiat, quae quam molestiae dolorum
+                            accusamus impedit voluptas, asperiores, quasi rem iusto itaque?
+                        </p>
+                    </div><!--Fin-->
+                </div>
+                <div class="des-direct">
+                    <img src="./src/img/01.png" alt="">
+                    <h4>Name name name</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, fugiat voluptas pariatur
+                        voluptatum dignissimos ratione dolorem cumque fuga necessitatibus minima eius distinctio culpa,
+                        quisquam perspiciatis est aperiam. Placeat, odio quia!</p>
+                </div>
+            </div>
+
+            <div id="siti-info">
+
+                <h4>Sitio de Informes</h4>
+
+            </div>
+
+            <div class="main-main-main">
+                <div class="cards">
+                    <img src="./src/img/logo-k.png" alt="">
+                    <h5>DOCUMENTOS</h5>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                </div>
+                <div class="cards">
+                    <img src="./src/img/icon-a.png" alt="">
+                    <h5>PROGRAMAS</h5>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                </div>
+                <div class="cards">
+                    <img src="./src/img/l-jp.jpg" alt="">
+                    <h5>PROYECTOS</h5>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                    <p>pppppppp rrrrr sssss qqqqqqq sdsds qqeweqwe sdasd sd</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="siti-int">
+                <h5>Sitio de Intereces</h5>
+                <div class="content">
+                    <a href=""><img src="./src/img/ico-red/youtube.png" alt=""></a>
+                    <a href=""><img src="./src/img/ico-red/instagram.png" alt=""></a>
+                    <a href=""><img src="./src/img/icon-a.png" alt=""></a>
+                    <a href=""><img src="./src/img/ico-red/tiktok.png" alt=""></a>
+                    <a href=""><img src="./src/img/ico-red/facebook.png" alt=""></a>
+                    <a href=""><img src="./src/img/icon-a.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <iframe loading="lazy" title="nose" id="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1376.7029896730905!2d-69.19377890982108!3d-12.58857311063263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x917b49f14959a227%3A0xfec19bf1e8242d24!2sSoporte%20Maldonado!5e0!3m2!1ses-419!2spe!4v1708067627077!5m2!1ses-419!2spe"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </main>
+
+
+    <button id="reload">Reload</button>
+
+
+
     <katio-draw part="footer" main="2"></katio-draw>
+    <katio-draw part="modal"></katio-draw>
 </body>
 
 </html>
